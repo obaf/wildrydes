@@ -1,0 +1,17 @@
+name: Hello World Pipeline
+
+on:
+  push:
+    branches: [ "main" ]  # Trigger on push to main
+  workflow_dispatch:       # Allow manual trigger
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest  # Uses Ubuntu runner
+    
+    steps:
+      - name: Checkout code (optional)
+        #uses: actions/checkout@v4  # Checks out your repo (not needed for just echo)
+        
+      - name: Print Hello World
+        run: echo "hello world"
